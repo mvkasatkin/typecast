@@ -51,7 +51,7 @@ class Factory
         }
 
         if ($result === null) {
-            throw new Exception('Type not found for: ' . $type);
+            throw new Exception('Type not found');
         }
 
         return $result;
