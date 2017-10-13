@@ -1,2 +1,3 @@
-# typecast
-typecast data by scheme
+# Typecast
+
+Typecast data by scheme

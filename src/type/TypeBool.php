@@ -6,20 +6,12 @@ class TypeBool extends Type
 {
 
     /**
-     * @param bool $default
-     */
-    public function __construct($default = false)
-    {
-        parent::__construct($default);
-    }
-
-    /**
      * @param $value
      *
-     * @return bool
+     * @return bool|null
      */
-    public function cast($value): bool
+    public function cast($value)
     {
-        return $value === null ? (bool)$this->default : (bool)$value;
+        return $value === null ? $this->default : (bool)$value;
     }
 }

@@ -6,20 +6,12 @@ class TypeObject extends Type
 {
 
     /**
-     * @param $default
-     */
-    public function __construct($default = null)
-    {
-        parent::__construct($default ?? new \stdClass());
-    }
-
-    /**
      * @param $value
      *
-     * @return \stdClass
+     * @return \stdClass|null
      */
-    public function cast($value): \stdClass
+    public function cast($value)
     {
-        return $value === null ? (object)$this->default : (object)$value;
+        return $value === null ? $this->default : (object)$value;
     }
 }

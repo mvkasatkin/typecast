@@ -6,20 +6,12 @@ class TypeBinary extends Type
 {
 
     /**
-     * @param string $default
-     */
-    public function __construct($default = '')
-    {
-        parent::__construct($default);
-    }
-
-    /**
      * @param $value
      *
-     * @return string
+     * @return string|null
      */
-    public function cast($value): string
+    public function cast($value)
     {
-        return $value === null ? (binary)$this->default : (binary)$value;
+        return $value === null ? $this->default : (binary)$value;
     }
 }

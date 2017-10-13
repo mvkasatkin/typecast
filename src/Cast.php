@@ -40,5 +40,4 @@ class Cast
     {
         return $this->type->cast($value);
     }
-
 }

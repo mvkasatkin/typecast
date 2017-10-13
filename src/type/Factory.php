@@ -9,7 +9,7 @@ class Factory
 {
 
     /**
-     * @param string|TypeClosure $type
+     * @param string|TypeClosure|\Closure $type
      *
      * @return CastInterface
      * @throws \Mvkasatkin\typecast\Exception
@@ -19,8 +19,7 @@ class Factory
         $result = null;
         if ($type instanceof \Closure) {
             $result = new TypeClosure($type);
-        }
-        if (\in_array($type, Cast::TYPES, true)) {
+        } elseif (\in_array($type, Cast::TYPES, true)) {
             switch ($type) {
                 case Cast::INT:
                     $result = new TypeInt();

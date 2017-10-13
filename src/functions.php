@@ -12,16 +12,18 @@ if (!\function_exists('\Mvkasatkin\typecast\cast')) {
      * @param $value
      * @param CastInterface|string|array $config
      *
+     * @param bool $strict
+     *
      * @return mixed|null
      */
-    function cast($value, $config)
+    function cast($value, $config, bool $strict = false)
     {
         $factory = new Factory();
         if (\is_array($config)) {
             /** @var TypeArrayOfType $arrayOfType */
             $config = ($arrayOfType = $factory->checkArrayOfType($config))
                 ? $arrayOfType
-                : new Scheme($config, $factory);
+                : new Scheme($config, $factory, $strict);
         } elseif (!$config instanceof CastInterface) {
             $config = $factory->createType($config);
         }

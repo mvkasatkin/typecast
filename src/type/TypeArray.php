@@ -16,10 +16,10 @@ class TypeArray extends Type
     /**
      * @param $value
      *
-     * @return array
+     * @return array|null
      */
-    public function cast($value): array
+    public function cast($value)
     {
-        return $value === null ? (array)$this->default : (array)$value;
+        return $value === null ? $this->default : (array)$value;
     }
 }

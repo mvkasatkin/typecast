@@ -6,20 +6,12 @@ class TypeString extends Type
 {
 
     /**
-     * @param string $default
-     */
-    public function __construct($default = '')
-    {
-        parent::__construct($default);
-    }
-
-    /**
      * @param $value
      *
-     * @return string
+     * @return string|null
      */
-    public function cast($value): string
+    public function cast($value)
     {
-        return $value === null ? (string)$this->default : (string)$value;
+        return $value === null ? $this->default : (string)$value;
     }
 }

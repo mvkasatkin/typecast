@@ -6,12 +6,12 @@ abstract class Type implements CastInterface
 {
 
     /**
-     * @var null
+     * @var mixed
      */
     protected $default;
 
     /**
-     * @param null $default
+     * @param $default
      */
     public function __construct($default = null)
     {

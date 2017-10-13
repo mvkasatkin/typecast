@@ -6,20 +6,12 @@ class TypeInt extends Type
 {
 
     /**
-     * @param int $default
-     */
-    public function __construct($default = 0)
-    {
-        parent::__construct($default);
-    }
-
-    /**
      * @param $value
      *
-     * @return int
+     * @return int|null
      */
-    public function cast($value): int
+    public function cast($value)
     {
-        return $value === null ? (int)$this->default : (int)$value;
+        return $value === null ? $this->default : (int)$value;
     }
 }
