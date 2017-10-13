@@ -1,0 +1,27 @@
+{
+    "name": "mvkasatkin/typecast",
+    "description": "Typecast data by scheme",
+    "license": "MIT",
+    "keywords": ["type", "cast", "typecast", "scheme", "convert"],
+    "authors": [
+        {
+            "name": "Maxim Kasatkin",
+            "email": "mvkasatkin@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6",
+        "mvkasatkin/mocker": "^1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mvkasatkin\\typecast\\": "src"
+        },
+        "files": [
+            "src/functions.php"
+        ]
+    }
+}
