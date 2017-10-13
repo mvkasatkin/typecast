@@ -48,9 +48,12 @@ class Factory
             }
         } elseif ($type instanceof CastInterface) {
             $result = $type;
-        } else {
+        }
+
+        if ($result === null) {
             throw new Exception('Type not found for: ' . $type);
         }
+
         return $result;
     }
 
