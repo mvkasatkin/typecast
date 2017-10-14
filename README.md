@@ -101,7 +101,7 @@ $scheme = new scheme([
     'field.1' => new TypeInt(),
     'field.2' => new TypeFloat(),
     'field.3' => [
-        'field.3.ids' => [new TypeInt()], // array of integers
+        'field.3.ids' => new TypeArrayOfType(new TypeInt()), // array of integers
         'field.3.name' => new TypeString(),
         'field.3.price' => new TypeClosure(function($value) { /* custom type casting */ })
     ],
